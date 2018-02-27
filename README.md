@@ -9,8 +9,8 @@ An instance class which hooks into keyup and keydown, and keeps track of all the
 
 [npm-image]: http://img.shields.io/npm/v/@jworkshop/keyboard.svg
 [npm-url]: http://npmjs.org/package/@jworkshop/keyboard
-[travis-image]: https://img.shields.io/travis/jworkshop/keyboard.svg
-[travis-url]: https://travis-ci.org/jworkshop/keyboard
+[travis-image]: https://img.shields.io/travis/JWorkshop/keyboard.svg
+[travis-url]: https://travis-ci.org/JWorkshop/keyboard
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/@jworkshop/keyboard.svg
@@ -23,6 +23,8 @@ An instance class which hooks into keyup and keydown, and keeps track of all the
 ## Usage
 
 ```javascript
+import Keyboard, { Keys } from "@jworkshop/keyboard";
+
 /* Get the container for the keyboard. */
 let container = document.getElementById("container");
 
@@ -42,26 +44,33 @@ keyboard.setPreventDefault(preventDefault);
 /** Toggle value for keyboard skipping further key down events. */
 keyboard.setPreventHoldDownEvent(preventHoldDownEvent);
 
+let keyDownHandler = event => { ... };
+
 /** Bind an event handler to the key down event. */
-keyboard.onKeyDown(event => { ... });
+keyboard.onKeyDown(keyDownHandler);
 
 /** Unbind an event handler to the key down event. */
-keyboard.removeKeyDown(event => { ... });
+keyboard.removeKeyDown(keyDownHandler);
 
 /** Unbind all event handlers from the key down event. */
 keyboard.clearKeyDown();
 
+let keyUpHandler = event => { ... };
+
 /** Bind an event handler to the key up event. */
-keyboard.onKeyUp(event => { ... });
+keyboard.onKeyUp(keyUpHandler);
 
 /** Unbind an event handler to the key up event. */
-keyboard.removeKeyUp(event => { ... });
+keyboard.removeKeyUp(keyUpHandler);
 
 /** Unbind all event handlers from the key up event. */
 keyboard.clearKeyUp();
 
 /** Checks if a given keyCode has been pressed. */
 keyboard.hasKeyPressed(keyCode);
+
+/** You can use key constants as keyCodes e.g.: */
+keyboard.hasKeyPressed(Keys.ENTER);
 
 /** Get the last keyCode that has been pressed. */
 keyboard.getLastKeyPressed();
