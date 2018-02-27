@@ -2,6 +2,12 @@
 
 An instance class which hooks into keyup and keydown, and keeps track of all the key pressed.
 
+[![build status][https://img.shields.io/travis/jworkshop/keyboard.svg]][https://travis-ci.org/jworkshop/keyboard]
+
+## install
+
+[![NPM](https://nodei.co/npm/@jworkshop/keyboard.png)](https://nodei.co/npm/@jworkshop/keyboard/)
+
 ## Usage
 
 ```javascript
