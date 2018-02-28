@@ -1,6 +1,6 @@
 {
   "name": "@jworkshop/keyboard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description":
     "An instance class which hooks into keyup and keydown, and keeps track of all the key pressed.",
   "author": "jworkshop <john.joydesign@gmail.com>",
